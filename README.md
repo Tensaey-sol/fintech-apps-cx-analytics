@@ -74,6 +74,38 @@ fintech-apps-cx-analytics/
 
 ---
 
+## 📈 Methodology
+
+This project was developed through the following phases:
+
+### Phase 1: Scraping Google Play Reviews
+
+- Extracted 400+ recent user reviews for each bank app using `google-play-scraper`.
+- Collected the following fields: **review text**, **rating**, **review date**, **bank name**, and **source**.
+- Saved raw reviews in structured format for each bank.
+
+### Phase 2: Cleaning and Preprocessing
+
+- Removed duplicates and handled missing values.
+- Normalized dates to `YYYY-MM-DD` format.
+- Standardized column names: `review`, `rating`, `date`, `bank`, `source`.
+- Exported cleaned datasets as separate CSV files in `/data`.
+
+### Phase 3: Data Validation
+
+- Verified total number of reviews collected (target: 1,200+).
+- Assessed data completeness (goal: <5% missing data).
+- Produced summary statistics and per-bank health checks.
+
+### Future Phases
+
+- **Sentiment Analysis:** Use VADER/TextBlob to classify reviews as positive, neutral, or negative.
+- **Theme Extraction:** Identify common issues or requested features using keyword and topic modeling.
+- **Database Storage:** Design and insert cleaned data into Oracle DB tables.
+- **Insights & Recommendations:** Create dashboards and reports for stakeholder decision-making.
+
+---
+
 ## ⚙️ GitHub Actions CI
 
 A CI workflow is configured to run on every push:
