@@ -97,10 +97,23 @@ This project was developed through the following phases:
 - Assessed data completeness (goal: <5% missing data).
 - Produced summary statistics and per-bank health checks.
 
+### Phase 4: Sentiment Analysis
+
+- Applied VADER sentiment analyzer to classify reviews as positive, negative, or neutral based on compound scores (thresholds: >0.05 for positive, <-0.05 for negative, else neutral).
+- Achieved sentiment scoring for 100% of reviews (exceeding 90% KPI).
+- Aggregated mean sentiment scores by bank and rating (1–5 stars) to identify satisfaction trends.
+- Saved results to per-bank CSV files with columns: `review_id`, `review_text`, `sentiment_label`, `sentiment_score`.
+
+### Phase 5: Thematic Analysis
+
+- Preprocessed review text using spaCy for tokenization, stop-word removal, and lemmatization.
+- Extracted top 5 keywords and n-grams per review using TF-IDF vectorization.
+- Mapped keywords to 3–5 themes per bank (e.g., Account Access, Performance, User Experience, Support, Transactions, Feature Request) using a rule-based approach.
+- Saved thematic results to per-bank CSV files with an additional `themes` column.
+- Documented theme examples to highlight user pain points and satisfaction drivers.
+
 ### Future Phases
 
-- **Sentiment Analysis:** Use VADER/TextBlob to classify reviews as positive, neutral, or negative.
-- **Theme Extraction:** Identify common issues or requested features using keyword and topic modeling.
 - **Database Storage:** Design and insert cleaned data into Oracle DB tables.
 - **Insights & Recommendations:** Create dashboards and reports for stakeholder decision-making.
 
