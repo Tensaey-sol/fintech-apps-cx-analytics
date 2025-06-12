@@ -49,6 +49,10 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+### 4. Configure Environment Variables
+
+- **Note**: Ensure the `.env` file exists in the project root (e.g., `fintech-apps-cx-analytics/.env`) with the format shown in [.env.example](.env.example).
+
 ---
 
 ## 📂 Project Structure
@@ -68,8 +72,11 @@ fintech-apps-cx-analytics/
 ├── scripts/                   # Scripts for scraping, cleaning, analysis
 │   ├── __init__.py
 │   └── README.md
+├── SQL dump/
+│   └── database_dump.sql      # SQL dump for version control and reproducibility
 ├── data/                      # Raw and processed datasets (ignored via .gitignore)
-└── .venv/                     # Local virtual environment (ignored via .gitignore)
+├── .venv/                     # Local virtual environment (ignored via .gitignore)
+└── .env.example               # Template file for secure credential management
 ```
 
 ---
@@ -112,10 +119,20 @@ This project was developed through the following phases:
 - Saved thematic results to per-bank CSV files with an additional `themes` column.
 - Documented theme examples to highlight user pain points and satisfaction drivers.
 
+### Phase 6: Database Storage
+
+- Designed and implemented a relational database in Oracle XE named `bank_reviews`.
+- Defined schema:
+  - **Banks Table**: Stores bank information with `bank_id` (primary key) and `bank_name` (unique).
+  - **Reviews Table**: Stores review data with `review_id` (primary key), `bank_id` (foreign key), `review_text` (CLOB), `rating`, `review_date`, `source`, `sentiment_label`, `sentiment_score`, `keywords` (CLOB), and `themes` (CLOB).
+- Developed Python scripts using `oracledb` to:
+  - Insert cleaned review data from CSV files into the database (1,432 reviews across 3 banks).
+  - Validate insertion by querying row counts.
+  - Generate an SQL dump (`SQL_dump/database_dump1.sql`) with table schema and data.
+
 ### Future Phases
 
-- **Database Storage:** Design and insert cleaned data into Oracle DB tables.
-- **Insights & Recommendations:** Create dashboards and reports for stakeholder decision-making.
+- **Insights & Recommendations**: Create dashboards and reports to visualize sentiment and thematic trends, providing actionable insights for stakeholders.
 
 ---
 
