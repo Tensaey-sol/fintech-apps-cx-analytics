@@ -73,9 +73,10 @@ fintech-apps-cx-analytics/
 │   ├── __init__.py
 │   └── README.md
 ├── SQL dump/
-│   └── database_dump.sql      # SQL dump for version control and reproducibility.
+│   └── database_dump.sql      # SQL dump for version control and reproducibility
 ├── data/                      # Raw and processed datasets (ignored via .gitignore)
-└── .venv/                     # Local virtual environment (ignored via .gitignore)
+├── .venv/                     # Local virtual environment (ignored via .gitignore)
+└── .env.example               # Template file for secure credential management
 ```
 
 ---
