@@ -130,9 +130,9 @@ This project was developed through the following phases:
   - Validate insertion by querying row counts.
   - Generate an SQL dump (`SQL_dump/database_dump1.sql`) with table schema and data.
 
-### Future Phases
+### Phase 7: Insights & Recommendations
 
-- **Insights & Recommendations**: Create dashboards and reports to visualize sentiment and thematic trends, providing actionable insights for stakeholders.
+- Develop interactive dashboards and detailed reports using Python visualization libraries (e.g., `Matplotlib`, `Seaborn`) to highlight **sentiment trends**, **thematic patterns**, and **comparative bank performance**. Provide data-driven recommendations, such as app feature enhancements and customer support improvements, tailored to stakeholder needs.
 
 ---
 
