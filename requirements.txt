@@ -9,3 +9,6 @@ spacy==3.8.7
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
 oracledb==3.1.1
 python-dotenv==1.1.0
+matplotlib==3.10.3
+seaborn==0.13.2
+wordcloud==1.9.4
